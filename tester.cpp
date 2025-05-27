@@ -4,19 +4,22 @@
 //    /\_/\       /\      (\__/)    A__A
 //   ( ˶•o•)     /  \     (•ω• )   (•⤙• )
 // ଘ(ა    )     /_/\_\     (ა  ૮)｡  (    )੭
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include<iostream>
+#include<fstream>
+#include<map>
 using namespace std;
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-#define tcT template<class T
-tcT> using ordered_set = tree<T, null_type,less<T>, rb_tree_tag,tree_order_statistics_node_update>;
+// #include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/tree_policy.hpp>
+// using namespace __gnu_pbds;
+// #define tcT template<class T
+// tcT> using ordered_set = tree<T, null_type,less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 using ll = long long;
 using db = long double;
 using str = string;
 using pi = pair<int,int>;
 using pll = pair<ll,ll>;
-using ppi = pair<int,pair<int,int>>;
+using ppi = pair<int,pair<int,int> >;
 #define mp make_pair
 #define pb push_back
 #define f(i,a,b) for(ll i=a;i<b;i++)
@@ -42,7 +45,7 @@ using vpi = V<pi>;
 using vpll = V<pll>;
 //const int MOD = 1e9+7;
 //const db PI = acos((db)-1);
-mt19937 rng(time(nullptr)); // or mt19937_64
+// mt19937 rng(time(nullptr)); // or mt19937_64
 //const ll inf = LLONG_MAX;
 //const int inf = INT_MAX;
 
@@ -105,7 +108,7 @@ int solve(ifstream& input, ifstream& output){
     int ncrystals,nmines;
     maxscore=0;
     input>>ncrystals;
-    V<pair<int,pt>> crystals(ncrystals); // < points, <x,y>>
+    V<pair<int,pt> > crystals(ncrystals); // < points, <x,y>>
     map<int,int> mapp;
     map<int,int> mappp;
     f(i,0,ncrystals){
@@ -114,7 +117,7 @@ int solve(ifstream& input, ifstream& output){
         mapp[crystals[i].second.x]++;
     }
     input>>nmines;
-    V<pair<int,pt>> mines(nmines); // < -points, <x,y>>
+    V<pair<int,pt> > mines(nmines); // < -points, <x,y>>
     f(i,0,nmines){
         input>>mines[i].second.x>>mines[i].second.y>>mines[i].first;
     }
@@ -124,7 +127,7 @@ int solve(ifstream& input, ifstream& output){
     ourscore=score;
     output>>edges>>edges; // input is actually V,E but for now this
     //if(edges>1000)return 0;
-    V<pair<pt,pt>> edgelist(edges);
+    V<pair<pt,pt> > edgelist(edges);
     f(i,0,edges){
         output>>edgelist[i].first.x>>edgelist[i].first.y>>edgelist[i].second.x>>edgelist[i].second.y;
     }
